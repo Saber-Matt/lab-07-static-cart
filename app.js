@@ -1,5 +1,8 @@
-// import functions and grab DOM elements
+import { findById } from './.js';
+import agents from './agentData.js';
 
-// initialize state
+const matchingAgent = findById(agents, 'sloth');
 
-// set event listeners to update state and DOM
+if (matchingAgent) { // sanity checking
+    console.log(matchingAgent.id);
+}
