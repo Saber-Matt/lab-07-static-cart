@@ -1,8 +1,5 @@
-`${sloth}, ${llama}, ${parrot}, ${baboon}, ${elephant}, ${alligator}, ${jaguar}, ${tiger}, ${komodo}`;
-
-
 export const agents = [
-    //Agents
+
     //tier1
 
     {
@@ -31,7 +28,7 @@ export const agents = [
     {
         agent: 'alligator',
         tier: 1,
-        description: 'This modern dino has lots of teeth and a bad attitude. It makes quarterly reviews challenging, but what Alice lacks in courtcy she more than makes up for in professional acumen.',
+        description: 'This modern dino has lots of teeth and a bad attitude. It makes quarterly reviews challenging, but what Alice lacks in curticy she more than makes up for in professional acumen.',
         price: '$200/day',
     },
 
