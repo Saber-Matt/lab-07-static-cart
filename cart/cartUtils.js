@@ -1,6 +1,6 @@
 import { cart } from './cart-data.js';
 import { createCartRow, findById, createTotalRow } from '../utils.js';
-import { agents } from '../folder/agentData.js';
+import { agents } from '../product/agentData.js';
 
 const tBody = document.querySelector('#tBody');
 for (let item of cart) {
