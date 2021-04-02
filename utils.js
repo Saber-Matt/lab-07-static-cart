@@ -48,11 +48,33 @@ export function createCartRow(item, matchingAgent) {
     //add text content for pro qty price (calculate total) 
     proCell.textContent = matchingAgent.agent;
     qtyCell.textContent = item.quantity;
-    priceCell.textContent = `Price: $${matchingAgent.price}/day`;
-    totalCell.textContent = `Price: $${item.quantity * matchingAgent.price}`;
+    priceCell.textContent = `$${matchingAgent.price}/day`;
+    totalCell.textContent = `$${item.quantity * matchingAgent.price}`;
 
     tr.append(proCell, qtyCell, priceCell, totalCell);
     return tr;
+}
 
+export function createTotalRow(cart, agents) {
+    const trPaymentDue = document.createElement('tr');
+    //create cell elements
+    const tdTotal = document.createElement('td');
+    const emptyCell2 = document.createElement('td');
+    const emptyCell3 = document.createElement('td');
+    const tdCalcTotal = document.createElement('td');
+    //inject data into row with textContent
 
+    let sumTotal = 0;
+    for (let item of cart) {
+        const matchingAgent = findById(agents, item.id);
+        const rowTotal = matchingAgent.price * item.quantity;
+        sumTotal = rowTotal + sumTotal;
+    }
+
+    tdTotal.textContent = 'Total Due:';
+    tdCalcTotal.textContent = `$${sumTotal}`;
+    //append row 
+
+    trPaymentDue.append(tdTotal, emptyCell2, emptyCell3, tdCalcTotal);
+    return trPaymentDue;
 }
