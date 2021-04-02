@@ -81,7 +81,15 @@ header img {
 p {
     margin: var(--gutter);
 }
-  
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.styleLi {
+    border: 1px black solid;
+}
+
 footer {
     position: fixed;
     width: 100%;
@@ -92,22 +100,3 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
-  
-  @keyframes pulse {
-    20% {
-      transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
-    }
-
-    40% {
-        transform: rotate3d(10, 10, -10, 50deg) scale(1);
-    }
-
-    60% {
-        transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
-      }
-
-    80% {
-        transform: rotate3d(10, 10, 10, 50deg) scale(1);
-    }
-
-  }
