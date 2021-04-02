@@ -37,3 +37,22 @@ export function createAgentLi(someAgent) {
     li.append(pTier, pImage, pName, pBio, pPrice, pButton);
     return li;
 }
+
+export function createCartRow(item, matchingAgent) {
+    const tr = document.createElement('tr');
+
+    const proCell = document.createElement('td');
+    const qtyCell = document.createElement('td');
+    const priceCell = document.createElement('td');
+    const totalCell = document.createElement('td');
+    //add text content for pro qty price (calculate total) 
+    proCell.textContent = matchingAgent.agent;
+    qtyCell.textContent = item.quantity;
+    priceCell.textContent = `Price: $${matchingAgent.price}/day`;
+    totalCell.textContent = `Price: $${item.quantity * matchingAgent.price}`;
+
+    tr.append(proCell, qtyCell, priceCell, totalCell);
+    return tr;
+
+
+}
