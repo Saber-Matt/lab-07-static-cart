@@ -1,4 +1,4 @@
-import { cart } from './cart-data.js';
+import { cart } from './cartData.js';
 import { createCartRow, findById, createTotalRow } from '../utils.js';
 import { agents } from '../product/agentData.js';
 
@@ -14,3 +14,11 @@ for (let item of cart) {
 const totalRow = createTotalRow(cart, agents);
 
 tBody.append(totalRow);
+
+
+
+const stringyCart = JSON.stringify(cart);
+localStorage.setItem(cart, stringyCart);
+const CartFromLocalStorage = localStorage.getItem(cart);
+const parsedCart = JSON.parse(cartFromLocalStorage);
+localStorage;

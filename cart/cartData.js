@@ -1,3 +1,8 @@
+//This look different from Dani's.
+//The files in my cartUtils look like what Dani has in cart-data.js 
+//Replace with Local Storage
+
+
 export const cart = [
     {
         id: 1,

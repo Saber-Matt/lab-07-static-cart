@@ -1,4 +1,5 @@
-//for Loop to render lis
+
+//on click add to cart
 import { agents } from './agentData.js';
 import { createAgentLi } from '../utils.js';
 
