@@ -1,0 +1,1 @@
+//loop through local storage instead of js file
