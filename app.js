@@ -1,5 +1,5 @@
-import { findById } from './.js';
-import agents from './Product/agentData.js';
+import { findById } from './utils.js';
+import { agents } from './product/agentData.js';
 
 const matchingAgent = findById(agents, 'sloth');
 

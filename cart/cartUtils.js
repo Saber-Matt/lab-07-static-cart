@@ -1,6 +1,9 @@
-import { cart } from './cartData.js';
+//import { cart } from './cartData.js';
 import { createCartRow, findById, createTotalRow } from '../utils.js';
 import { agents } from '../product/agentData.js';
+import { getCart } from '../local-storage/localStorageUtils.js';
+
+const cart = getCart();
 
 const tBody = document.querySelector('#tBody');
 for (let item of cart) {
@@ -15,10 +18,16 @@ const totalRow = createTotalRow(cart, agents);
 
 tBody.append(totalRow);
 
-
-
-const stringyCart = JSON.stringify(cart);
-localStorage.setItem(cart, stringyCart);
-const CartFromLocalStorage = localStorage.getItem(cart);
-const parsedCart = JSON.parse(cartFromLocalStorage);
-localStorage;
+const cartButton = document.querySelector('button');
+console.log(cartButton);
+cartButton.addEventListener('click', () => {
+    const cart = getCart();
+    alert(JSON.stringify(cart));
+    localStorage.clear();
+    window.location = '../';
+});
+// const stringyCart = JSON.stringify(cart);
+// localStorage.setItem(cart, stringyCart);
+// const CartFromLocalStorage = localStorage.getItem(cart);
+// const parsedCart = JSON.parse(cartFromLocalStorage);
+// localStorage;

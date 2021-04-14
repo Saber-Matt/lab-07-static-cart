@@ -1,5 +1,10 @@
-export function findById(agents, id) {
-    for (let item of agents) {
+import { addItemToCart } from './local-storage/localStorageUtils.js';
+import { agents } from './product/agentData.js';
+
+
+export function findById(array, id) {
+    //console.log(array);
+    for (let item of array) {
         if (item.id === id) {
             return item;
         }
@@ -25,12 +30,12 @@ export function createAgentLi(someAgent) {
     pPrice.textContent = `Price: $${someAgent.price}/day`;
 
     const pButton = document.createElement('button');
-    pButton.textContent = 'Add to Cart';
 
+    pButton.textContent = 'Add to Cart';
+    pButton.value = agents.id;
+    console.log(someAgent.id);
     pButton.addEventListener('click', () => {
-        console.log(
-            'clicked'
-        );
+        addItemToCart(someAgent.id);
     });
 
 

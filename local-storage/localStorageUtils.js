@@ -1,13 +1,13 @@
 //write a function that initializes a cart if there isn't one already
 //import findById from './utils.js';
 
-import { findById } from '../utils';
+import { findById } from '../utils.js';
 
 const CART = 'CART';
 export function getCart() {
     const stringyCart = localStorage.getItem(CART);
     const parsedCart = JSON.parse(stringyCart);
-    if (!parsedCart) return parsedCart;
+    if (parsedCart) return parsedCart;
     else return [];
 }
 
@@ -16,9 +16,9 @@ export function setCart(myFullCart) {
     localStorage.setItem(CART, stringyMyFullCart);
 }
 
-export function addToCart(itemId) {
+export function addItemToCart(itemId) {
     const myFunCart = getCart();
-
+    //console.log(myFunCart);
     const matchingItem = findById(myFunCart, itemId);
     if (matchingItem) matchingItem.quantity++;
     else {
@@ -32,3 +32,5 @@ export function addToCart(itemId) {
     setCart(myFunCart);
 
 }
+
+//export { addItemToCart }
